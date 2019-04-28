@@ -2,6 +2,8 @@ from textblob import TextBlob
 from nltk.tokenize import TabTokenizer
 from textblob import Word
 
+from textblob.sentiments import NaiveBayesAnalyzer
+
 
 # text_blob_object = TextBlob("Tom is great!")
 # print(text_blob_object.tags)
@@ -13,8 +15,14 @@ from textblob import Word
 # print(text_blob_object.words)
 # print(text_blob_object.sentences)
 
-word = Word("equilibria")
-print(word.lemmatize())
+# word = Word("equilibria")
+# print(word.lemmatize())
+
+# text_blob_object = TextBlob("Thiss is a coorrect sentence.")
+# print(text_blob_object.correct())
+
+text_blob_object = TextBlob("Baby Shark Do do do do do", analyzer=NaiveBayesAnalyzer())
+print(text_blob_object.sentiment)
 
 
 
